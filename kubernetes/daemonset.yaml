@@ -30,10 +30,12 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: counter
+  labels:
+    billingType: "hourly"
 spec:
   accessModes:
   - ReadWriteMany
   resources:
     requests:
-      storage: 50Mi
-  storageClassName: efs
+      storage: 20Gi
+  storageClassName: ibmc-file-bronze
